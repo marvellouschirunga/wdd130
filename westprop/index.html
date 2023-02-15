@@ -1,70 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WestProperties Zimbabwe | Home</title>
-    <link rel="stylesheet" href="styles/style.css">
+    
 </head>
+
 <body>
     <div id="content">
-    <header>
-        <a id="logo_link" href="index.html">
-            <img class="logo" src="images/logo.png" alt="West Properties logo">
-        </a>
-
-        <nav>
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="site-plan.html">Site Plan </a>
-        <a href="our-developments.html">Our Developments</a>
+        <div class="header">
+            <a id="logo_link" href="index.html">
+                <img class="logo" src="images/logo.png" alt="West Properties logo">
+            <div class="header-right">
+              <a class="active" href="index.html">Home</a>
+              <a href="aboutus.html">About Us</a>
+              <a href="our-developments.html">Our Developments</a>
+              <a href="site-plan.html">Site Plan </a>
+            </div>
+        </div>
         
-        </nav>
-        
-    </header>
+    
 
-    <div id="hero">
-        <div id="hero-box">
-            <img id="hero-img" src="images/hero.png" alt="Pokugara House">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/landscape.webp" style="width:100%;">
+                <div class="text">Live</div>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/hse1.webp" style="width:100%;">
+                <div class="text">Work</div>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/hse2.webp" style="width: 100%;">
+                <div class="text">Play</div>
+            </div>
+        
+        </div>
+        
+        <br>
+        
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
         </div>
 
-        <section id="hero-msg">
-            <h1 class="home-title">Have An Adventure </h1>
-            <h4> Make Memories with Bundu Travel and Tours</h4>
-            <div class = 'button-box'>
-                <a class="book" href="rates.html">Book Now</a>
-            </div>
-        </section>
-    </div>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
 
-    <main class="home-grid">
-        <section class="rivers-card">
-            <img class="card-img" src="images/rivers.jpg" alt="river in forest">
-            <img class="icon" src="images/river_icon.png" alt="river icon">
-            <h2>Rivers</h2>
-        </section>
-        <section class="camping-card">
-            <img class="card-img" src="images/camping.jpg" alt="tent in mountains">
-            <img class="icon" src="images/fire_icon.png" alt="fire icon">
-            <h2>Camping</h2>
-        </section>
-        <section class="rapids-card">
-            <img class="card-img" src="images/rapids.jpg" alt="rafting boat">
-            <img class="icon" src="images/oars.png" alt="oars icon">
-            <h2>Rapids</h2>
-        </section>
-        <div id="background"></div>
-        <img class="mountains" src="images/mountains.jpg" alt="Misty mountains">
-        <section class="msg">
-            <h2>Mosi-oa-Tunya - More than Just a Thrill</h2>
-            <p>Enjoy the breathtaking scenery of one of the seven wonders of the world. From valleys, meadows, canyons, and high peaks; it's way more than just the rapids. It's a great way to get away from it all and relax amongst all the beauty of the great outdoors. </p>
-            <a class="join" href="rivers.html">Join Us</a>
-        </section>
-    </main>
+
+    
+    <button class="accordion">OUR VISION</button>
+    <div class="panel">
+      <p>Our vision is to become the leading customer centric developer of exceptional properties in Zimbabwe.</p>
+    </div>
+    
+    <button class="accordion">OUR MISSION</button>
+    <div class="panel">
+        <p> mission is to delight our customers with the latest sustainable innovation incorporating modern designs in our residential and commercial offerings in Zimbabwe.</p>
+    </div>
+    
+    <button class="accordion">OUR PURPOSE</button>
+    <div class="panel">
+      <p>Our purpose is to use our creative gifts, determination and ‘never give up’ attitude to deliver lasting value in real estate development for all stakeholders by:
+        Leaving a legacy that benefits society;
+        <ul development initiatives that have a positive environmental effect;></ul>
+        <ul back 10% of our profits to the vulnerable and less fortunate children of Zimbabwe.></ul>
+    </p>
+    </div>
+    
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("actives");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+
+
     <footer>
         <p>West Properties Zimbabwe &copy; 2023 - Marvellous Chirunga</p>
-        <p><a href="site-plan-rafting.html">Site Plan</a></p>
+        <p><a href="site-plan.html">Site Plan</a></p>
         <p><a href="our-developments.html">Our Developments</a></p>
         <div class="social">
             <a href="https://facebook.com" target="_blank">
